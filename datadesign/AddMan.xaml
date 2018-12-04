@@ -1,0 +1,33 @@
+﻿<Controls:MetroWindow x:Class="datadesign.AddMan"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:datadesign"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        mc:Ignorable="d"
+        Title="添加管理人员信息" Height="300" Width="401.551"
+        GlowBrush="{DynamicResource AccentColorBrush}"
+        BorderThickness="1"
+        WindowStartupLocation="CenterScreen"
+        ShowMaxRestoreButton="False">
+    <Grid>
+        <Label x:Name="label1" Content="姓名" HorizontalAlignment="Left" Margin="95,99,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.679,-0.835"/>
+        <Label x:Name="label2" Content="管理栋号" HorizontalAlignment="Left" Margin="95,144,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="185,99,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Controls:TextBoxHelper.Watermark="请输入姓名" Controls:TextBoxHelper.ClearTextButton="True"/>
+        <Button x:Name="button" Content="确定" HorizontalAlignment="Left" Margin="185,202,0,0" VerticalAlignment="Top" Width="120" Style="{StaticResource AccentedSquareButtonStyle}" Click="button_Click"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="185,139,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem>1</ComboBoxItem>
+            <ComboBoxItem>2</ComboBoxItem>
+            <ComboBoxItem>3</ComboBoxItem>
+            <ComboBoxItem>4</ComboBoxItem>
+            <ComboBoxItem>5</ComboBoxItem>
+            <ComboBoxItem>6</ComboBoxItem>
+            <ComboBoxItem>7</ComboBoxItem>
+            <ComboBoxItem>8                                                                                                                                                                 </ComboBoxItem>
+        </ComboBox>
+        <Label Content="工号" HorizontalAlignment="Left" Margin="95,55,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.57,0.959"/>
+        <Label x:Name="labelwnum"  Content="选择管理栋号后自动生成" HorizontalAlignment="Left" Margin="185,55,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Controls:MetroWindow>

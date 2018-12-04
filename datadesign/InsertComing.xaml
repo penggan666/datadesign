@@ -1,0 +1,21 @@
+﻿<Controls:MetroWindow x:Class="datadesign.Coming"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:datadesign"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        mc:Ignorable="d"
+        Title="来访登记" Height="300" Width="459.097"
+        GlowBrush="{DynamicResource AccentColorBrush}"
+        BorderThickness="1"
+        WindowStartupLocation="CenterScreen"
+        ShowMaxRestoreButton="False">
+    <Grid>
+        <Label x:Name="label" Content="姓名" HorizontalAlignment="Left" Margin="41,41,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="来访原因" HorizontalAlignment="Left" Margin="41,95,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="113,41,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="303" Controls:TextBoxHelper.Watermark="请输入姓名" Controls:TextBoxHelper.ClearTextButton="True"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="93" Margin="113,94,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="303" Controls:TextBoxHelper.Watermark="请输入来访原因" Controls:TextBoxHelper.ClearTextButton="True"/>
+        <Button x:Name="button" Content="确定" HorizontalAlignment="Left" Margin="181,206,0,0" VerticalAlignment="Top" Width="134" Style="{StaticResource AccentedSquareButtonStyle}" Click="button_Click" />
+    </Grid>
+</Controls:MetroWindow>

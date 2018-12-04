@@ -1,0 +1,28 @@
+﻿<Controls:MetroWindow x:Class="datadesign.ChangeMan"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:datadesign"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        mc:Ignorable="d"
+        Title="更改管理人员信息" Height="300" Width="401.551"
+        GlowBrush="{DynamicResource AccentColorBrush}"
+        BorderThickness="1"
+        WindowStartupLocation="CenterScreen"
+        ShowMaxRestoreButton="False">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250*"/>
+            <ColumnDefinition Width="41*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="label" Content="工号" HorizontalAlignment="Left" Margin="95,40,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="姓名" HorizontalAlignment="Left" Margin="95,90,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="管理栋号" HorizontalAlignment="Left" Margin="95,140,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="button" Content="确定" HorizontalAlignment="Left" Margin="185,200,0,0" VerticalAlignment="Top" Width="120" Style="{StaticResource AccentedSquareButtonStyle}" Click="button_Click" />
+        <Label x:Name="label3"  HorizontalAlignment="Left" Margin="185,40,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label4"  HorizontalAlignment="Left" Margin="185,90,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="185,141,0,0" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Controls:MetroWindow>
