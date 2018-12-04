@@ -3,26 +3,21 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:datadesign"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:local="clr-namespace:datadesign"
         mc:Ignorable="d"
-        Title="userMain" Height="451.904" Width="823.837"
+        Title="寝室楼信息" Height="451.904" Width="823.837"
         GlowBrush="{DynamicResource AccentColorBrush}"
         BorderThickness="1"
         WindowStartupLocation="CenterScreen"
         ShowMaxRestoreButton="False">
     <Grid>
-        <Controls:Tile Title="查看学生信息" TitleFontSize="16" TiltFactor="2" Grid.Column="0" Width="Auto" Height="Auto" Margin="165,33,471.333,247.667" Background="#CC119EDA" Click="Tile_Click" >
+        <Controls:Tile Title="查看学生信息" TitleFontSize="16" TiltFactor="2" Grid.Column="0" Width="200" Height="150" Margin="171,119,444.333,151.667" Background="#CC119EDA" Click="Tile_Click_1">
             <Image x:Name="image" Height="93" Width="150" Source="bin/Debug/student.png"/>
         </Controls:Tile>
-        <Controls:Tile Title="查看寝室信息" TitleFontSize="16"  TiltFactor="2" Grid.Row="0" Width="Auto" Height="Auto" Margin="165,225,471.333,55.667" Click="Tile_Click_1" >
+        <Controls:Tile Title="查看寝室信息" TitleFontSize="16"  TiltFactor="2" Grid.Row="0" Width="200" Height="150" Margin="434,119,81.333,151.667" Click="Tile_Click">
             <Image x:Name="image1" Height="93" Width="150" Source="bin/Debug/app store.png"/>
         </Controls:Tile>
-        <Controls:Tile Title="夜归信息" TitleFontSize="16" TiltFactor="2" Grid.Column="0" Width="179" Height="Auto" Margin="480,33,154.333,247.667" Background="#CC119EDA" Click="Tile_Click_2" >
-            <Image x:Name="image2" Height="93" Width="150" Source="bin/Debug/11.png"/>
-        </Controls:Tile>
-        <Controls:Tile Title="外来人员信息" TitleFontSize="16"  TiltFactor="2" Grid.Row="0" Width="179" Height="Auto" Margin="480,225,154.333,55.667" Click="Tile_Click_3" >
-            <Image x:Name="image3" Height="93" Width="150" Source="bin/Debug/22.png"/>
-        </Controls:Tile>
     </Grid>
+
 </Controls:MetroWindow>

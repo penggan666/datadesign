@@ -10,7 +10,7 @@ namespace datadesign
 {
     class MYSql
     {
-        private string MysqlCon= "server=localhost;database=SDM;uid=sa;pwd=1";
+        private string MysqlCon= "server=localhost;database=SDM;uid=sa;pwd=jjh123";
         public DataTable ExecuteQuery(string sqlStr)//执行查询语句
         {
             SqlConnection con = new SqlConnection(MysqlCon);

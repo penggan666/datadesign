@@ -14,8 +14,9 @@
     <Grid>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="100" Margin="288,733,0,-373" VerticalAlignment="Top" Width="100"/>
         <Label x:Name="label" Content="工号" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="73,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.303,0.449" Controls:TextBoxHelper.Watermark="请输入工号" Controls:TextBoxHelper.ClearTextButton="True"/>
         <Button x:Name="button" Content="按工号查询" HorizontalAlignment="Left" Margin="437,7,0,0" VerticalAlignment="Top" Width="75" Style="{StaticResource AccentedSquareButtonStyle}" Click="button_Click1"/>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="0,43,0,0" VerticalAlignment="Top" Width="715" Height="417" IsReadOnly="True" >
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="0,43,0,0" VerticalAlignment="Top" Width="715" Height="417" IsReadOnly="True">
             <DataGrid.ContextMenu>
                 <ContextMenu Name="dgmenu1" StaysOpen="true">
                     <MenuItem Header="新增" Click="MenuItem_Click" />
@@ -24,9 +25,8 @@
                 </ContextMenu>
             </DataGrid.ContextMenu>
         </DataGrid>
+        <TextBox x:Name="bnumBox"  HorizontalAlignment="Left" Height="23" Margin="268,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Controls:TextBoxHelper.Watermark="请输入栋号" Controls:TextBoxHelper.AutoWatermark="True"/>
         <Button x:Name="button_Copy" Content="栋号查询" HorizontalAlignment="Left" Margin="555,7,0,0" VerticalAlignment="Top" Width="82" Style="{StaticResource AccentedSquareButtonStyle}" Click="button_Click2" RenderTransformOrigin="0.368,0.157"/>
         <Label Content="栋号" HorizontalAlignment="Left" Margin="213,10,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="64,10,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Margin="268,11,0,0" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Controls:MetroWindow>

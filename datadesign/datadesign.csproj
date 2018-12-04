@@ -77,27 +77,15 @@
     <Compile Include="ChangeMan.xaml.cs">
       <DependentUpon>ChangeMan.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GetInfo.cs" />
-    <Compile Include="InsertComing.xaml.cs">
-      <DependentUpon>InsertComing.xaml</DependentUpon>
-    </Compile>
     <Compile Include="DrMain.xaml.cs">
       <DependentUpon>DrMain.xaml</DependentUpon>
     </Compile>
     <Compile Include="Exchange.xaml.cs">
       <DependentUpon>Exchange.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GetInfo.cs" />
     <Compile Include="InsertS.xaml.cs">
       <DependentUpon>InsertS.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="InsertLate.xaml.cs">
-      <DependentUpon>InsertLate.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MainCome.xaml.cs">
-      <DependentUpon>MainCome.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MainLate.xaml.cs">
-      <DependentUpon>MainLate.xaml</DependentUpon>
     </Compile>
     <Compile Include="ManageUd.xaml.cs">
       <DependentUpon>ManageUd.xaml</DependentUpon>
@@ -113,16 +101,9 @@
     <Compile Include="SdDetail.xaml.cs">
       <DependentUpon>SdDetail.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Source.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="userMain.xaml.cs">
       <DependentUpon>userMain.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="userStu.xaml.cs">
-      <DependentUpon>userStu.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="usreDor.xaml.cs">
-      <DependentUpon>usreDor.xaml</DependentUpon>
     </Compile>
     <Page Include="addDor.xaml">
       <SubType>Designer</SubType>
@@ -136,10 +117,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="InsertComing.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="DrMain.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -149,18 +126,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="InsertS.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="InsertLate.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MainCome.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MainLate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -193,14 +158,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="userMain.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="userStu.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="usreDor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -262,10 +219,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="bin\Debug\bank-fill.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="bin\Debug\11.png" />
-    <Resource Include="bin\Debug\22.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

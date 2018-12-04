@@ -12,8 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
-using System.Windows.Threading;
-
 namespace datadesign
 {
     /// <summary>
@@ -21,41 +19,21 @@ namespace datadesign
     /// </summary>
     public partial class userMain : MetroWindow
     {
-        DispatcherTimer timer = new DispatcherTimer();
-        MYSql mysql = new MYSql();
         public userMain()
         {
             InitializeComponent();
-            timer.Tick += new EventHandler(timer_Tick);
-            timer.Start();
-        }
-        void timer_Tick(object sender, EventArgs e)
-        {
-            this.Title = string.Concat(Source.build, "栋寝室楼管理                                                    ", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
         }
 
-        private void Tile_Click(object sender, RoutedEventArgs e)//学生信息
+        private void Tile_Click(object sender, RoutedEventArgs e)//查看寝室信息
         {
-            userStu u1 = new userStu();
-            u1.Show();
+            DrMain dr = new DrMain();
+            dr.Show();
         }
 
-        private void Tile_Click_1(object sender, RoutedEventArgs e)//寝室信息
+        private void Tile_Click_1(object sender, RoutedEventArgs e)//查看学生信息
         {
-            usreDor u = new usreDor();
-            u.Show();
-        }
-
-        private void Tile_Click_2(object sender, RoutedEventArgs e)//夜归信息
-        {
-            MainLate la = new MainLate();
-            la.Show();
-        }
-
-        private void Tile_Click_3(object sender, RoutedEventArgs e)//外来人员信息
-        {
-            MainCome mc = new MainCome();
-            mc.Show();
+            SdDetail sd = new SdDetail();
+            sd.Show();
         }
     }
 }

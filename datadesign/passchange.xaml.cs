@@ -42,16 +42,16 @@ namespace datadesign
             else
             {
                 string username = textBox.Text.Trim();
-                string s1 = "select wnum,pwd from worker where wnum='" + username + "' and pwd='" + password + "'";
+                string s1 = "select username,password from users where username='" + username + "' and password='" + password + "'";
                 DataTable dt = new DataTable();
                 dt=mysql.ExecuteQuery(s1);
                 if (dt != null && dt.Rows.Count > 0)
                 {
-                    string s2 = "update worker set pwd='" + password1 + "'where wnum='" + username + "'";
+                    string s2 = "update users set password='" + password1 + "'where username='" + username + "'";
                     int n = mysql.ExecuteUpdate(s2);
                     if (n != 0)
                     {
-                        await this.ShowMessageAsync("提示", "修改成功");
+                        await this.ShowMessageAsync("提示", password1);
                         this.Close();
                     }
                 }

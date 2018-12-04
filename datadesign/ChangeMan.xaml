@@ -19,10 +19,10 @@
         <Label x:Name="label" Content="工号" HorizontalAlignment="Left" Margin="95,40,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label1" Content="姓名" HorizontalAlignment="Left" Margin="95,90,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label2" Content="管理栋号" HorizontalAlignment="Left" Margin="95,140,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="185,40,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Controls:TextBoxHelper.Watermark="请输入工号" Controls:TextBoxHelper.ClearTextButton="True"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="185,90,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Controls:TextBoxHelper.Watermark="请输入姓名" Controls:TextBoxHelper.ClearTextButton="True"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="185,140,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Controls:TextBoxHelper.Watermark="请输入管理栋号" Controls:TextBoxHelper.ClearTextButton="True"/>
         <Button x:Name="button" Content="确定" HorizontalAlignment="Left" Margin="185,200,0,0" VerticalAlignment="Top" Width="120" Style="{StaticResource AccentedSquareButtonStyle}" Click="button_Click" />
-        <Label x:Name="label3"  HorizontalAlignment="Left" Margin="185,40,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="label4"  HorizontalAlignment="Left" Margin="185,90,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="185,141,0,0" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Controls:MetroWindow>

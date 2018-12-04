@@ -21,7 +21,6 @@
             <Label x:Name="label3" Content="旧栋号" Canvas.Left="28" Canvas.Top="34" Visibility="Hidden"/>
             <Label x:Name="year" Content="新生入学年份" Canvas.Left="28" Canvas.Top="78" Visibility="Hidden"/>
             <TextBox x:Name="yeartextbox" Height="23" Canvas.Left="112" TextWrapping="Wrap"  Canvas.Top="77" Width="120" Controls:TextBoxHelper.Watermark="学生入学年份"  Controls:TextBoxHelper.ClearTextButton="True" Visibility="Hidden" />
-
             <ComboBox x:Name="comboBox1" Canvas.Left="112" Canvas.Top="129" Width="120">
                 <ComboBoxItem>1</ComboBoxItem>
                 <ComboBoxItem>2</ComboBoxItem>
@@ -29,8 +28,6 @@
                 <ComboBoxItem>4</ComboBoxItem>
                 <ComboBoxItem>5</ComboBoxItem>
                 <ComboBoxItem>6</ComboBoxItem>
-                <ComboBoxItem>7</ComboBoxItem>
-                <ComboBoxItem>8</ComboBoxItem>
             </ComboBox>
             <ComboBox x:Name="comboBox2" Canvas.Left="112" Canvas.Top="33" Width="120" Visibility="Hidden">
                 <ComboBoxItem>1</ComboBoxItem>
@@ -39,17 +36,15 @@
                 <ComboBoxItem>4</ComboBoxItem>
                 <ComboBoxItem>5</ComboBoxItem>
                 <ComboBoxItem>6</ComboBoxItem>
-                <ComboBoxItem>7</ComboBoxItem>
-                <ComboBoxItem>8</ComboBoxItem>
             </ComboBox>
         </Canvas>
-        <ToolBar x:Name="toolBar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="405">
+        <ToolBar x:Name="toolBar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="444">
             <RadioButton x:Name="radioButton" Content="更改个人寝室信息" Height="21.3333333333333" VerticalAlignment="Top" Checked="radioButton_Checked"/>
-            <RadioButton x:Name="radioButton1" Content="更改整个寝室信息" Height="21.3333333333333" VerticalAlignment="Top" Checked="radioButton1_Checked"/>
-            <RadioButton x:Name="radioButton2" Content="安排新生入住信息" Checked="radioButton2_Checked" Margin="0,0,0,1.4" Height="21" VerticalAlignment="Bottom"/>
+            <RadioButton x:Name="radioButton1" Content="更改整个寝室信息" Checked="radioButton1_Checked" Height="21" VerticalAlignment="Top"/>
+            <RadioButton x:Name="radioButton2" Content="安排新生入住信息" Checked="radioButton2_Checked" Margin="0,0,0,1.4"/>
+            <RadioButton x:Name="radioButton3" Content="删除毕业学生信息" Checked="radioButton3_Checked" Margin="0,0,0,1.4"/>
         </ToolBar>
         <Button x:Name="button2" Content="确认修改" HorizontalAlignment="Left" Margin="158,283,0,0" VerticalAlignment="Top" Width="162" FontSize="13.333" Style="{StaticResource AccentedSquareButtonStyle}" Click="button2_Click"/>
-        <Controls:ProgressRing x:Name="Progress1"  Foreground="{DynamicResource AccentColorBrush}" IsActive="False"/>
 
     </Grid>
 </Controls:MetroWindow>

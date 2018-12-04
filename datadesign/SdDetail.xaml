@@ -12,33 +12,38 @@
         WindowStartupLocation="CenterScreen"
         ShowMaxRestoreButton="False">
     <Grid>
-        <ToolBar x:Name="toolBar" HorizontalAlignment="Left" Margin="0,41,0,0" VerticalAlignment="Top" Width="486">
-            <Button x:Name="button" Content="学号查询" Height="23" Width="81" Margin="0,0,0,0.333" Click="button_Click" Style="{StaticResource AccentedSquareButtonStyle}"/>
+        <ToolBar x:Name="toolBar" HorizontalAlignment="Left" Margin="0,41,0,0" VerticalAlignment="Top" Width="446">
+            <Button x:Name="button" Content="学号查询" Height="23" Width="81" Click="button_Click" Style="{StaticResource AccentedSquareButtonStyle}" VerticalAlignment="Top"/>
             <Button x:Name="button1" Content="学院查询" Height="23" VerticalAlignment="Top" Width="81" Style="{StaticResource AccentedSquareButtonStyle}" Click="button1_Click"/>
             <Button x:Name="button2" Content="栋号查询" Height="23" VerticalAlignment="Bottom" Width="81" Style="{StaticResource AccentedSquareButtonStyle}" Click="button2_Click"/>
             <Button x:Name="button3" Content="寝室号查询" Height="23" VerticalAlignment="Top" Width="81" Style="{StaticResource AccentedSquareButtonStyle}" Click="button3_Click"/>
             <Button x:Name="button4" Content="入住时间查询" Height="23" VerticalAlignment="Top" Width="81" Style="{StaticResource AccentedSquareButtonStyle}" Click="button4_Click"/>
-
         </ToolBar>
         <Label x:Name="label" Content="学号" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="50,10,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Controls:TextBoxHelper.Watermark="请输入学号" Controls:TextBoxHelper.ClearTextButton="True"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="50,10,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Controls:TextBoxHelper.Watermark="请输入学号" Controls:TextBoxHelper.ClearTextButton="True" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="220,10,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Controls:TextBoxHelper.Watermark="请输入学院" Controls:TextBoxHelper.ClearTextButton="True"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="570,10,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Controls:TextBoxHelper.Watermark="请输入寝室号" Controls:TextBoxHelper.ClearTextButton="True"/>
         <Label x:Name="label2" Content="寝室号" HorizontalAlignment="Left" Margin="520,10,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label1" Content="学院" HorizontalAlignment="Left" Margin="180,10,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="765,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Controls:TextBoxHelper.Watermark="请输入年份" Controls:TextBoxHelper.ClearTextButton="True"/>
         <Label x:Name="label3" Content="入住时间" HorizontalAlignment="Left" Margin="700,10,0,0" VerticalAlignment="Top" />
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" Width="986" Height="394" ItemsSource="{Binding}" Style="{StaticResource AzureDataGrid}" IsReadOnly="True">
             <DataGrid.ContextMenu>
                 <ContextMenu Name="dgmenu1" StaysOpen="true">
                     <MenuItem Header="删除" Click="MenuItem_Click"/>
                 </ContextMenu>
-        </DataGrid.ContextMenu>
+            </DataGrid.ContextMenu>
         </DataGrid>
         <Label x:Name="label4" Content="栋号" HorizontalAlignment="Left" Margin="350,11,0,0" VerticalAlignment="Top"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="0" Margin="558,26,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="8"/>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="390,10,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBox_SelectionChanged">
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="390,10,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem>1</ComboBoxItem>
+            <ComboBoxItem>2</ComboBoxItem>
+            <ComboBoxItem>3</ComboBoxItem>
+            <ComboBoxItem>4</ComboBoxItem>
+            <ComboBoxItem>5</ComboBoxItem>
+            <ComboBoxItem>6</ComboBoxItem>
         </ComboBox>
-        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Margin="220,9,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="comboBox2" HorizontalAlignment="Left" Margin="763,11,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="comboBox3" HorizontalAlignment="Left" Margin="571,12,0,0" VerticalAlignment="Top" Width="120"/>
 
 
     </Grid>

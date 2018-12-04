@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace datadesign
+namespace SDM
 {
     class Room
     {
@@ -13,7 +14,7 @@ namespace datadesign
         public String brsex;
         public int size;
         public List<Room> roomlist = new List<Room>();
-        public Room(string buildingnum, string roomnum, string brsex, int size)
+        public Room(string buildingnum,string roomnum,string brsex,int size)
         {
             this.buildingnum = buildingnum;
             this.roomnum = roomnum;

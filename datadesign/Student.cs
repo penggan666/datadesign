@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
 
-namespace datadesign
+namespace SDM
 {
     class Student
     {
@@ -82,7 +85,7 @@ namespace datadesign
                 {
                     last = num.ToString();
                 }
-                string year1 = year.Substring(2, 2) + "00";
+                string year1 = year.Substring(2, 2)+"00";
                 String id = year1 + temp[college[cindex]] + last;
                 Student stu = new Student();
                 stu.setStudent(id, name, sc, "男");
@@ -119,8 +122,8 @@ namespace datadesign
                 {
                     last = num.ToString();
                 }
-                string year1 = year.Substring(2, 2) + "00";
-                String id = year1 + temp[college[cindex]] + last;
+                string year1 = year.Substring(2, 2)+"00";
+                String id = year1+ temp[college[cindex]] + last;
                 Student stu = new Student();
                 stu.setStudent(id, name, sc, "女");
                 slist.Add(stu);
@@ -132,5 +135,6 @@ namespace datadesign
             GMaleSinfo(year);
             return slist;
         }
+       
     }
 }

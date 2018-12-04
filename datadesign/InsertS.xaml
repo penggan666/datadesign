@@ -21,5 +21,7 @@
         <Label x:Name="buildingnum1"  Content="栋号" HorizontalAlignment="Left" Margin="145,78,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.248,0.609"/>
         <Label Content="入住时间" HorizontalAlignment="Left" Margin="34,163,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.141,0.568"/>
         <TextBox x:Name="yearBox" HorizontalAlignment="Left" Height="23" Margin="125,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Controls:TextBoxHelper.Watermark="请输入入住时间" Controls:TextBoxHelper.ClearTextButton="True"/>
+
+
     </Grid>
 </Controls:MetroWindow>

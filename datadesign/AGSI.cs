@@ -1,4 +1,6 @@
-﻿using System;
+﻿using datadesign;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -6,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace datadesign
+namespace SDM
 {
     class AGSI
     {
@@ -83,7 +85,7 @@ namespace datadesign
         }
         public void StudentToDB()
         {
-            String conn = "server=localhost;database=SDM;user id=sa;password=1";
+            String conn = "server=localhost;database=SDM;user id=sa;password=jjh123";
             DataTable studt = GetStudentTableSchema();
             using (SqlConnection sqlConnection = new SqlConnection(conn))
             {
@@ -188,3 +190,6 @@ namespace datadesign
         }
     }
 }
+
+
+

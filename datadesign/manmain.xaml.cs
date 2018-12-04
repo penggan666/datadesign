@@ -13,7 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
-using System.Windows.Threading;
 
 namespace datadesign
 {
@@ -22,17 +21,11 @@ namespace datadesign
     /// </summary>
     public partial class manmain : MetroWindow
     {
-        DispatcherTimer timer = new DispatcherTimer();
         public manmain()
         {
             InitializeComponent();
-            timer.Tick += new EventHandler(timer_Tick);
-            timer.Start();
         }
-        void timer_Tick(object sender,EventArgs e)
-        {
-            this.Title = string.Concat("寝室楼管理                                                    ",DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-        }
+
         private void Tile_Click(object sender, RoutedEventArgs e)//查看学生信息
         {
             Progress1.IsActive = true;

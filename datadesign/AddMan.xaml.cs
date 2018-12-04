@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,14 +22,12 @@ namespace datadesign
     /// </summary>
     public partial class AddMan : MetroWindow
     {
-        private ManageUd man;
-        public void setMan(ManageUd u)
-        {
-            man = u;
-        }
+        
         public AddMan()
         {
+           
             InitializeComponent();
+
         }
 
         private async void button_Click(object sender, RoutedEventArgs e)//添加
@@ -42,8 +41,8 @@ namespace datadesign
             string wname = textBox1.Text;
             string pwd = "111111";
             labelwnum.Content = wnum;
-            string s = "insert into worker(wnum,wname,bnum,pwd)values('" + wnum + "','" + wname + "','" + buildingnum + "','" + pwd + "')";
-            if (wname == "" || buildingnum == "")
+            string s = "insert into worker(wnum,wname,bnum,pwd)values('"+wnum+"','"+wname+"','"+buildingnum+"','"+pwd+"')";
+            if( wname=="" || buildingnum == "")
             {
                 await this.ShowMessageAsync("提示", "请输入完整的信息");
             }
@@ -51,13 +50,12 @@ namespace datadesign
             try
             {
                 mYSql.ExecuteQuery(s);
-                await this.ShowMessageAsync("提示", "插入成功,新的工号是" + wnum);
-                man.dataGrid.ItemsSource = mYSql.ExecuteQuery("select wnum as '工号',wname as '姓名',bnum as '管理栋号' from worker").DefaultView;
-                this.Close();
+                await this.ShowMessageAsync("提示","插入成功,新的工号是"+wnum);
+                
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-                await this.ShowMessageAsync("提示", "未插入成功，已有此工号" + ex);
+                await this.ShowMessageAsync("提示", "未插入成功，已有此工号" +ex );
             }
         }
     }

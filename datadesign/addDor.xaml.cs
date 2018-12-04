@@ -25,14 +25,19 @@ namespace datadesign
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// 添加寝室
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void button_Click(object sender, RoutedEventArgs e)//增加寝室
         {
+
             string buildingnum = textBox.Text;
             string roomnum = textBox1.Text;
             string sex = textBox3.Text;
             int size;
-            if (buildingnum == "" || roomnum == "" || sex == "" || textBox2.Text == "")
+            if(buildingnum == ""|| roomnum == ""||sex == "" || textBox2.Text == "")
             {
                 await this.ShowMessageAsync("提示", "请输入完整信息");
             }
@@ -56,6 +61,9 @@ namespace datadesign
             {
                 await this.ShowMessageAsync("提示", "数据未按格式输入");
             }
+            
+            
+            
         }
     }
 }

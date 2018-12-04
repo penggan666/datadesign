@@ -21,6 +21,5 @@
         <Button x:Name="button" Content="确定" HorizontalAlignment="Left" Margin="185,219,0,0" VerticalAlignment="Top" Width="120" Style="{StaticResource AccentedSquareButtonStyle}" Click="button_Click" />
         <TextBox x:Name="textBox3"  HorizontalAlignment="Left" Height="23" Margin="185,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Controls:TextBoxHelper.Watermark="请输入寝室性别" Controls:TextBoxHelper.ClearTextButton="True"/>
         <Label Content="性别" HorizontalAlignment="Left" Margin="101,118,0,0" VerticalAlignment="Top"/>
-
     </Grid>
 </Controls:MetroWindow>

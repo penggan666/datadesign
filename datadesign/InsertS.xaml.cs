@@ -20,20 +20,17 @@ namespace datadesign
     /// <summary>
     /// InsertS.xaml 的交互逻辑
     /// </summary>
-    /// 
     public partial class InsertS : MetroWindow
     {
-        MYSql mysql = new MYSql();
+        /// <summary>
+        /// 在 xaml中添加label 并赋值
+        /// </summary>
         string roomnum;
         string buildingnum;
         string sex;
         int maxsize;
         int asize;
-        private DrMain drmain;
-        public void SetDr(DrMain d)
-        {
-            drmain = d;
-        }
+
         public InsertS(string buildingnum, string roomnum, string sex, int maxsize, int asize)
         {
             InitializeComponent();
@@ -84,13 +81,11 @@ namespace datadesign
                     }
                     else
                     {
-                        string s = "insert into DS(buildingnum,roomnum,sid,livetime)values('" + buildingnum + "','" + roomnum + "','" + sid + "','" + year + "')";
+                        string s = "insert into DS(buildingnum,roomnum,sid,livetime)values('" + buildingnum + "','" + roomnum + "','" + sid + "','"+year+"')";
                         if (GetSex(sid).Equals(sex[0].ToString()) == true)
                         {
                             mysql.ExecuteUpdate(s);
                             await this.ShowMessageAsync("提示", "插入成功");
-                            this.Close();
-                            drmain.first();
                         }
                         else
                         {
@@ -100,6 +95,6 @@ namespace datadesign
                 }
             }
         }
-
     }
 }
+
