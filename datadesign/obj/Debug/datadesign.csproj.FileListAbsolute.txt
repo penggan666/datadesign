@@ -53,3 +53,7 @@ H:\课程相关\c＋＋\实验程序\datadesign\datadesign\obj\Debug\MainCome.g.
 H:\课程相关\c＋＋\实验程序\datadesign\datadesign\obj\Debug\MainLate.g.cs
 H:\课程相关\c＋＋\实验程序\datadesign\datadesign\obj\Debug\MainCome.baml
 H:\课程相关\c＋＋\实验程序\datadesign\datadesign\obj\Debug\MainLate.baml
+H:\课程相关\c＋＋\实验程序\datadesign\datadesign\obj\Debug\fix.g.cs
+H:\课程相关\c＋＋\实验程序\datadesign\datadesign\obj\Debug\StuMain.g.cs
+H:\课程相关\c＋＋\实验程序\datadesign\datadesign\obj\Debug\fix.baml
+H:\课程相关\c＋＋\实验程序\datadesign\datadesign\obj\Debug\StuMain.baml

@@ -20,10 +20,11 @@
         <TextBox x:Name="userid" HorizontalAlignment="Left" Height="12" TextWrapping="Wrap" VerticalAlignment="Top" Width="197" Margin="161,102,0,0"  Controls:TextBoxHelper.Watermark="请输入账号" Controls:TextBoxHelper.ClearTextButton="True"/>
         <Image x:Name="image" HorizontalAlignment="Left" Height="24" Margin="118,102,0,0" VerticalAlignment="Top" Width="29" RenderTransformOrigin="0.5,0.5" Source="bin/Debug/user.png" Stretch="UniformToFill" />
         <Image x:Name="image1" HorizontalAlignment="Left" Height="24" Margin="120,146,0,0" VerticalAlignment="Top" Width="29" Source="bin/Debug/lock.png"/>
-        <RadioButton x:Name="radioButton" Content="宿管人员" HorizontalAlignment="Left" Margin="163,186,0,0" VerticalAlignment="Top" Checked="radioButton_Checked"/>
-        <RadioButton x:Name="radioButton1" Content="宿管办" HorizontalAlignment="Left" Margin="286,186,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.407,0.444" Checked="radioButton1_Checked"/>
+        <RadioButton x:Name="radioButton" Content="宿管人员" HorizontalAlignment="Left" Margin="223,186,0,0" VerticalAlignment="Top" Checked="radioButton_Checked"/>
+        <RadioButton x:Name="radioButton1" Content="宿管办" HorizontalAlignment="Left" Margin="300,186,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.407,0.444" Checked="radioButton1_Checked"/>
         <PasswordBox x:Name="passid" HorizontalAlignment="Left" Height="12" Margin="163,146,0,0" VerticalAlignment="Top" Width="197" Controls:TextBoxHelper.Watermark="请输入密码" Controls:TextBoxHelper.ClearTextButton="True"/>
         <Label x:Name="label" Content="    寝室管理系统" HorizontalAlignment="Left" Margin="163,26,0,0" VerticalAlignment="Top" Width="195" Height="43" FontSize="21.333"/>
         <Label x:Name="label1" Content="修改密码" Margin="0,288,442,0" VerticalAlignment="Top" FontSize="13.333" HorizontalAlignment="Right" Width="65" MouseDoubleClick="label1_MouseDoubleClick" />
+        <RadioButton x:Name="radioButton2" Content="学生" HorizontalAlignment="Left" Margin="167,186,0,0" VerticalAlignment="Top" Checked="radioButton2_Checked"/>
     </Grid>
 </Controls:MetroWindow>

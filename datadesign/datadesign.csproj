@@ -77,6 +77,9 @@
     <Compile Include="ChangeMan.xaml.cs">
       <DependentUpon>ChangeMan.xaml</DependentUpon>
     </Compile>
+    <Compile Include="fix.xaml.cs">
+      <DependentUpon>fix.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GetInfo.cs" />
     <Compile Include="InsertComing.xaml.cs">
       <DependentUpon>InsertComing.xaml</DependentUpon>
@@ -115,6 +118,9 @@
     </Compile>
     <Compile Include="Source.cs" />
     <Compile Include="Student.cs" />
+    <Compile Include="StuMain.xaml.cs">
+      <DependentUpon>StuMain.xaml</DependentUpon>
+    </Compile>
     <Compile Include="userMain.xaml.cs">
       <DependentUpon>userMain.xaml</DependentUpon>
     </Compile>
@@ -133,6 +139,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ChangeMan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="fix.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -189,6 +199,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SdDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StuMain.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

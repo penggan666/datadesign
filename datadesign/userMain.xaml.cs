@@ -57,5 +57,11 @@ namespace datadesign
             MainCome mc = new MainCome();
             mc.Show();
         }
+
+        private void Tile_Click_4(object sender, RoutedEventArgs e)//报修信息
+        {
+            fix f = new fix();
+            f.Show();
+        }
     }
 }

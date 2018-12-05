@@ -71,6 +71,12 @@ namespace datadesign
                     else
                         await this.ShowMessageAsync("提示", "用户名或密码错误");
                 }
+                if(selected==3)//学生界面
+                {
+                    StuMain stu = new StuMain();
+                    this.Close();
+                    stu.Show();
+                }
             }
             //userMain u = new userMain();
             //this.Close();
@@ -94,6 +100,11 @@ namespace datadesign
         {
             passchange ch = new passchange();
             ch.Show();
+        }
+
+        private void radioButton2_Checked(object sender, RoutedEventArgs e)
+        {
+            selected = 3;
         }
     }
 }
