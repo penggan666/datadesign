@@ -25,110 +25,59 @@ namespace datadesign
     {
         MYSql mysql = new MYSql();
         DataTable dt = new DataTable();
-        List<String> list = new List<string>();
 
         public SdDetail()
         {
             InitializeComponent();
-            string s = "select student.sid as '学号',student.sname as '姓名',student.Ssex as '性别',student.scollege as '学院',DS.buildingnum as '栋号',DS.roomnum as '寝室号' from student,DS where student.sid=DS.sid";
+            string s = "select student.sid as '学号',student.sname as '姓名',student.Ssex as '性别',student.scollege as '学院',DS.buildingnum as '栋号',DS.roomnum as '寝室号' ,DS.livetime as '入住时间' from student,DS where student.sid=DS.sid";
             dt = mysql.ExecuteQuery(s);
             dataGrid.ItemsSource = dt.DefaultView;
-            string s1 = "select distinct scollege from student";
-            DataTable d1 = mysql.ExecuteQuery(s1);
-            comboBox1.ItemsSource = d1.DefaultView;
-            comboBox1.DisplayMemberPath = "scollege";
-            string s2 = "select distinct buildingnum from broom";
-            DataTable d2 = mysql.ExecuteQuery(s2);
-            for (int i = 0; i < d2.Rows.Count; i++)
-            {
-                string r = d2.Rows[i][0].ToString();
-                list.Add(r);
-            }
-            comboBox.ItemsSource = list;
 
         }
-        private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+
+        private void button_Click(object sender, RoutedEventArgs e)//学号查询
         {
-            string ss = comboBox.SelectedValue.ToString();
-            string s1 = "select roomnum from broom where buildingnum='" + ss + "'";
-            DataTable d = mysql.ExecuteQuery(s1);
-            comboBox3.ItemsSource = d.DefaultView;
-            comboBox3.DisplayMemberPath = "roomnum";
-        }
-        private async void button_Click(object sender, RoutedEventArgs e)//学号查询
-        {
-            if (textBox.Text == "")
-                await this.ShowMessageAsync("提示", "请输入学号");
-            else
-            {
-                string no = textBox.Text;
-                string s = "select student.sid as '学号',student.sname as '姓名',student.Ssex as '性别',student.scollege as '学院',DS.buildingnum as '栋号',DS.roomnum as '寝室号' from student,DS where student.sid=DS.sid and student.sid='" + no + "'";
-                dt = mysql.ExecuteQuery(s);
-                dataGrid.ItemsSource = dt.DefaultView;
-            }
+            string no = textBox.Text;
+            string s = "select * from student,DS where student.sid=DS.sid and student.sid='" + no + "'";
+            dt = mysql.ExecuteQuery(s);
+            dataGrid.ItemsSource = dt.DefaultView;
         }
 
-        private async void button1_Click(object sender, RoutedEventArgs e)//学院查询
+        private void button1_Click(object sender, RoutedEventArgs e)//学院查询
         {
-            string college = comboBox1.Text;
-            if (college == "")
-                await this.ShowMessageAsync("提示", "请选择学院");
-            else
-            {
-                string s = "select student.sid as '学号',student.sname as '姓名',student.Ssex as '性别',student.scollege as '学院',DS.buildingnum as '栋号',DS.roomnum as '寝室号' from student,DS where student.sid=DS.sid and student.scollege = '" + college + "'";
-                dt = mysql.ExecuteQuery(s);
-                dataGrid.ItemsSource = dt.DefaultView;
-            }
+            string college = textBox1.Text;
+            string s = "select * from student,DS where student.sid = DS.sid and student.scollege = '" + college + "'";
+            dt = mysql.ExecuteQuery(s);
+            dataGrid.ItemsSource = dt.DefaultView;
         }
 
-        private async void button2_Click(object sender, RoutedEventArgs e)//栋号查询
+        private void button2_Click(object sender, RoutedEventArgs e)//栋号查询
         {
-            string buildingnum = comboBox.Text;
-            if (buildingnum == "")
-                await this.ShowMessageAsync("提示", "请选择栋号");
-            else
-            {
-                string s = "select student.sid as '学号',student.sname as '姓名',student.Ssex as '性别',student.scollege as '学院',DS.buildingnum as '栋号',DS.roomnum as '寝室号' from student,DS where student.sid=DS.sid and buildingnum = '" + buildingnum + "'";
-                dt = mysql.ExecuteQuery(s);
-                dataGrid.ItemsSource = dt.DefaultView;
-            }
+            string buildingnum = comboBox.SelectedValue.ToString().Replace("System.Windows.Controls.ComboBoxItem: ", "");
+            Console.Write(buildingnum);
+            string s = "select * from DS where buildingnum = '" + buildingnum + "'";
+            dt = mysql.ExecuteQuery(s);
+            dataGrid.ItemsSource = dt.DefaultView;
         }
 
-        private async void button3_Click(object sender, RoutedEventArgs e)//寝室号查询
+        private void button3_Click(object sender, RoutedEventArgs e)//寝室号查询
         {
-            if (comboBox.Text == "" || comboBox3.Text == "")
-                await this.ShowMessageAsync("提示", "检索信息不完整 请选择栋号和寝室号");
-            else
-            {
-                string s = "select student.sid as '学号',student.sname as '姓名',student.Ssex as '性别',student.scollege as '学院',DS.buildingnum as '栋号',DS.roomnum as '寝室号' from student,DS where student.sid=DS.sid and buildingnum = '" + comboBox.Text + "'and roomnum='"+comboBox3.Text+"'";
-                dt = mysql.ExecuteQuery(s);
-                dataGrid.ItemsSource = dt.DefaultView;
-            }
+            string roomnum = textBox2.Text;
+            string s = "select * from DS where roomnum = '" + roomnum + "'";
+            dt = mysql.ExecuteQuery(s);
+            dataGrid.ItemsSource = dt.DefaultView;
         }
-        private async void button4_Click(object sender, RoutedEventArgs e)//入住时间查询
+        private void button4_Click(object sender, RoutedEventArgs e)//入住时间查询
         {
-            string year = comboBox2.Text;
-            if (year == "")
-                await this.ShowMessageAsync("提示", "请选择入住时间");
-            else
-            {
-                try
-                {
-                    string s = "select student.sid as '学号',student.sname as '姓名',student.Ssex as '性别',student.scollege as '学院',DS.buildingnum as '栋号',DS.roomnum as '寝室号' from student,DS where student.sid=DS.sid and livetime = '" + year + "'";
-                    dt = mysql.ExecuteQuery(s);
-                    dataGrid.ItemsSource = dt.DefaultView;
-                }
-                catch (Exception ex)
-                {
-                    await this.ShowMessageAsync("提示", ex.ToString());
-                }
-
-            }
+            string year = textBox3.Text;
+            string s = "select * from DS where livetime = '" + year + "'";
+            dt = mysql.ExecuteQuery(s);
+            dataGrid.ItemsSource = dt.DefaultView;
         }
 
         private async void MenuItem_Click(object sender, RoutedEventArgs e)//删除住宿信息
         {
-            MessageDialogResult result1=await this.ShowMessageAsync("删除信息", "您真的要删除吗?", MessageDialogStyle.AffirmativeAndNegative);
+            MessageDialogResult result1 = await this.ShowMessageAsync("删除信息", "您真的要删除吗?", MessageDialogStyle.AffirmativeAndNegative);
             if (result1 != MessageDialogResult.Negative)//取消
             {
                 DataRowView d = (DataRowView)this.dataGrid.SelectedItems[this.dataGrid.SelectedItems.Count - 1];
@@ -140,8 +89,6 @@ namespace datadesign
             }
 
         }
-
-
 
     }
 }

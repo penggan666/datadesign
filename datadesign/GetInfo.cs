@@ -42,5 +42,24 @@ namespace datadesign
             int num = Convert.ToInt32(dt.Rows[0]["num"]);
             return num;
         }
+        public int getYear()
+        {
+            MYSql mYSql = new MYSql();
+            int lastyear;
+            string sql = "select MAX(livetime) as 'MAX' from DS";
+            DataTable dt = mYSql.ExecuteQuery(sql);
+            try
+            {
+                lastyear = Convert.ToInt32(dt.Rows[0]["MAX"].ToString());
+
+            }
+            catch
+            {
+                lastyear = 0;
+            }
+            return lastyear;
+        }
+
     }
+
 }

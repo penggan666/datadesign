@@ -33,10 +33,93 @@ namespace datadesign
             Label num = canvas.FindName("label3") as Label;
             ComboBox tex = canvas.FindName("comboBox2") as ComboBox;
             Label num1 = canvas.FindName("label") as Label;
+
             num.Visibility = Visibility.Hidden;
             tex.Visibility = Visibility.Hidden;
             num1.Content = "学号";
             selected = 1;
+            button2.Content = "确认修改";
+        }
+        private void radioButton1_Checked(object sender, RoutedEventArgs e)//修改整个寝室住宿信息
+        {
+
+            Label year = canvas.FindName("year") as Label;
+            Label num1 = canvas.FindName("label") as Label;
+            Label num2 = canvas.FindName("label1") as Label;
+            Label num3 = canvas.FindName("label3") as Label;
+            Label num4 = canvas.FindName("label2") as Label;
+            ComboBox tex = canvas.FindName("comboBox2") as ComboBox;
+            ComboBox newCombobox = canvas.FindName("comboBox1") as ComboBox;
+            TextBox textBox1 = canvas.FindName("textBox1") as TextBox;
+            TextBox textBox2 = canvas.FindName("textBox") as TextBox;
+            TextBox yearbox = canvas.FindName("yeartextbox") as TextBox;
+            num3.Visibility = Visibility.Visible;
+            num1.Visibility = Visibility.Visible;
+            num4.Visibility = Visibility.Visible;
+            num2.Visibility = Visibility.Visible;
+            textBox1.Visibility = Visibility.Visible;
+            textBox2.Visibility = Visibility.Visible;
+            tex.Visibility = Visibility.Visible;
+            newCombobox.Visibility = Visibility.Visible;
+            year.Visibility = Visibility.Hidden;
+            yearbox.Visibility = Visibility.Hidden;
+            num1.Content = "旧寝室号";
+            selected = 2;
+            button2.Content = "确认修改";
+        }
+
+        private void radioButton3_Checked(object sender, RoutedEventArgs e)
+        {
+            Label year = canvas.FindName("year") as Label;
+            Label label = canvas.FindName("label1") as Label;
+            Label num = canvas.FindName("label3") as Label;
+            Label num1 = canvas.FindName("label") as Label;
+            Label num2 = canvas.FindName("label2") as Label;
+            TextBox yearbox = canvas.FindName("yeartextbox") as TextBox;
+            TextBox textBox = canvas.FindName("textBox") as TextBox;
+            TextBox textBox1 = canvas.FindName("textBox1") as TextBox;
+            ComboBox tex1 = canvas.FindName("comboBox1") as ComboBox;
+            ComboBox tex = canvas.FindName("comboBox2") as ComboBox;
+
+            num2.Visibility = Visibility.Hidden;
+            num.Visibility = Visibility.Hidden;
+            label.Visibility = Visibility.Hidden;
+            num1.Visibility = Visibility.Hidden;
+            textBox.Visibility = Visibility.Hidden;
+            textBox1.Visibility = Visibility.Hidden;
+            tex1.Visibility = Visibility.Hidden;
+            tex.Visibility = Visibility.Hidden;
+            year.Visibility = Visibility.Hidden;
+            yearbox.Visibility = Visibility.Hidden;
+            button2.Content = "确认删除";
+            selected = 4;
+        }
+        private void radioButton2_Checked(object sender, RoutedEventArgs e)
+        {
+            Label year = canvas.FindName("year") as Label;
+            Label label = canvas.FindName("label1") as Label;
+            Label num = canvas.FindName("label3") as Label;
+            Label num1 = canvas.FindName("label") as Label;
+            Label num2 = canvas.FindName("label2") as Label;
+            TextBox yearbox = canvas.FindName("yeartextbox") as TextBox;
+            TextBox textBox = canvas.FindName("textBox") as TextBox;
+            TextBox textBox1 = canvas.FindName("textBox1") as TextBox;
+            ComboBox tex1 = canvas.FindName("comboBox1") as ComboBox;
+            ComboBox tex = canvas.FindName("comboBox2") as ComboBox;
+            TextBox textBox2 = canvas.FindName("textBox") as TextBox;
+
+            num2.Visibility = Visibility.Hidden;
+            num.Visibility = Visibility.Hidden;
+            label.Visibility = Visibility.Hidden;
+            num1.Visibility = Visibility.Hidden;
+            textBox.Visibility = Visibility.Hidden;
+            textBox1.Visibility = Visibility.Hidden;
+            tex1.Visibility = Visibility.Hidden;
+            tex.Visibility = Visibility.Hidden;
+            year.Visibility = Visibility.Visible;
+            yearbox.Visibility = Visibility.Visible;
+            selected = 3;
+            button2.Content = "确认修改";
         }
         public bool Getin(string buildingnum, string roomnum, int type) //type等于1 判断一个人入住，等于2 判断两个人入住情况
         {
@@ -72,61 +155,9 @@ namespace datadesign
                 default:
                     break;
             }
+
             return false;
         }
-
-        private void radioButton1_Checked(object sender, RoutedEventArgs e)//修改整个寝室住宿信息
-        {
-            Label year = canvas.FindName("year") as Label;
-            Label num1 = canvas.FindName("label") as Label;
-            Label num2 = canvas.FindName("label1") as Label;
-            Label num3 = canvas.FindName("label3") as Label;
-            Label num4 = canvas.FindName("label2") as Label;
-            ComboBox tex = canvas.FindName("comboBox2") as ComboBox;
-            ComboBox newCombobox = canvas.FindName("comboBox1") as ComboBox;
-            TextBox textBox1 = canvas.FindName("textBox1") as TextBox;
-            TextBox textBox2 = canvas.FindName("textBox") as TextBox;
-            TextBox yearbox = canvas.FindName("yeartextbox") as TextBox;
-            num3.Visibility = Visibility.Visible;
-            num1.Visibility = Visibility.Visible;
-            num4.Visibility = Visibility.Visible;
-            num2.Visibility = Visibility.Visible;
-            textBox1.Visibility = Visibility.Visible;
-            textBox2.Visibility = Visibility.Visible;
-            tex.Visibility = Visibility.Visible;
-            newCombobox.Visibility = Visibility.Visible;
-            year.Visibility = Visibility.Hidden;
-            yearbox.Visibility = Visibility.Hidden;
-            num1.Content = "旧寝室号";
-            selected = 2;
-        }
-        private void radioButton2_Checked(object sender, RoutedEventArgs e)
-        {
-            Label year = canvas.FindName("year") as Label;
-            Label label = canvas.FindName("label1") as Label;
-            Label num = canvas.FindName("label3") as Label;
-            Label num1 = canvas.FindName("label") as Label;
-            Label num2 = canvas.FindName("label2") as Label;
-            TextBox yearbox = canvas.FindName("yeartextbox") as TextBox;
-            TextBox textBox = canvas.FindName("textBox") as TextBox;
-            TextBox textBox1 = canvas.FindName("textBox1") as TextBox;
-            ComboBox tex1 = canvas.FindName("comboBox1") as ComboBox;
-            ComboBox tex = canvas.FindName("comboBox2") as ComboBox;
-
-            num2.Visibility = Visibility.Hidden;
-            num.Visibility = Visibility.Hidden;
-            label.Visibility = Visibility.Hidden;
-            num1.Visibility = Visibility.Hidden;
-            textBox.Visibility = Visibility.Hidden;
-            textBox1.Visibility = Visibility.Hidden;
-            tex1.Visibility = Visibility.Hidden;
-            tex.Visibility = Visibility.Hidden;
-
-            year.Visibility = Visibility.Visible;
-            yearbox.Visibility = Visibility.Visible;
-            selected = 3;
-        }
-
         private async void button2_Click(object sender, RoutedEventArgs e)
         {
             GetInfo getInfo = new GetInfo();
@@ -223,29 +254,57 @@ namespace datadesign
             }
             else if (selected == 3)
             {
+                GetInfo gf = new GetInfo();
+                int lastyear = gf.getYear();
                 string year = yeartextbox.Text;
                 if (year == "")
                     await this.ShowMessageAsync("提示", "请输入年份");
+                else if (Convert.ToInt32(year) > lastyear + 1 || Convert.ToInt32(year) < lastyear)
+                {
+                    await this.ShowMessageAsync("提示", "请输入正确的年份");
+                }
                 else
                 {
                     AGSI gs = new AGSI(year);
 
                     try
                     {
-                        Progress1.IsActive = true;
                         gs.DAlloc();
-                        Progress1.IsActive = false;
                         await this.ShowMessageAsync("提示", "完成");
-
                     }
-                    catch (Exception ex)
+                    catch(Exception ex)
                     {
-                        await this.ShowMessageAsync("异常", ex.ToString());
+                        await this.ShowMessageAsync("Caution", ex.ToString());
                     }
-
-                    this.Close();
                 }
             }
+            else if (selected == 4)
+            {
+                int maxyear;
+                int minyear;
+                DataTable dt = mysql.ExecuteQuery("select max(livetime) as maxyear, min(livetime) as minyear from DS");
+                try
+                {
+                    maxyear = Convert.ToInt32(dt.Rows[0]["maxyear"]);
+                    minyear = Convert.ToInt32(dt.Rows[0]["minyear"]);
+                    if (maxyear - minyear == 4)
+                    {
+                        mysql.ExecuteQuery("delete from DS where livetime = '" + minyear.ToString() + "'");
+                        await this.ShowMessageAsync("提示", "删除完成");
+                    }
+                    else if (maxyear - minyear != 4)
+                    {
+                        await this.ShowMessageAsync("提示", "暂无毕业生信息");
+                    }
+                }
+                catch
+                {
+                    await this.ShowMessageAsync("提示", "暂无学生住宿信息");
+                }
+
+            }
         }
+
     }
 }
+
