@@ -23,6 +23,7 @@ namespace datadesign
     public partial class fix : MetroWindow
     {
         private int selected = 1;
+
         public fix()
         {
             InitializeComponent();
@@ -30,31 +31,38 @@ namespace datadesign
             DataTable dt = new DataTable();
             dt = mysql.ExecuteQuery("select * from broom");
             dataGrid.ItemsSource = dt.DefaultView;
+
+
         }
 
         private void radioButton_Checked(object sender, RoutedEventArgs e)//未处理
         {
             selected = 1;
-            dgmenu1.IsEnabled = true;
         }
 
+        
         private void radioButton1_Checked(object sender, RoutedEventArgs e)//已处理
         {
-            dgmenu1.IsEnabled = false;
+            selected = 2;
         }
 
         private void radioButton2_Checked(object sender, RoutedEventArgs e)//已完成
         {
-            
+            selected = 3;
         }
         private void MenuItem_Click(object sender, RoutedEventArgs e)//处理
         {
-
+            setworker sw = new setworker();
+            sw.Show();
         }
 
-        private void dataGrid_ContextMenuClosing(object sender, ContextMenuEventArgs e)
+        private void dataGrid_ContextMenuOpening(object sender, ContextMenuEventArgs e)
         {
-            selected = 1;
+            if (selected == 2||selected==3)
+            {
+                e.Handled = true;
+            }
+
         }
     }
 }

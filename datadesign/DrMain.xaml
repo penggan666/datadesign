@@ -20,8 +20,6 @@
             <DataGrid.ContextMenu>
                 <ContextMenu Name="dgmenu1" StaysOpen="true">
                     <MenuItem Header="增加人员" Click="MenuItem_Click_2"/>
-                    <MenuItem Header="新增寝室" Click="MenuItem_Click" />
-                    <MenuItem Header="删除寝室" Click="MenuItem_Click_1"/>
                 </ContextMenu>
             </DataGrid.ContextMenu>
         </DataGrid>
@@ -30,5 +28,6 @@
             <Button x:Name="button2" Content="寝室号查询" Height="23" VerticalAlignment="Top" Width="76" Style="{StaticResource AccentedSquareButtonStyle}" Click="button2_Click"/>
         </ToolBar>
         <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Margin="280,11,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="button" Content="新增/删除寝室" HorizontalAlignment="Left" Margin="867,0,0,0" VerticalAlignment="Top" Width="119" Style="{StaticResource AccentedSquareButtonStyle}" Height="36" Click="button_Click"/>
     </Grid>
 </Controls:MetroWindow>

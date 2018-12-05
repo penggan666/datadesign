@@ -164,5 +164,11 @@ namespace datadesign
             comboBox1.ItemsSource = d.DefaultView;
             comboBox1.DisplayMemberPath = "roomnum";
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            DorChange dc = new DorChange();
+            dc.Show();
+        }
     }
 }

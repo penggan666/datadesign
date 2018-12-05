@@ -23,9 +23,16 @@ namespace datadesign
     public partial class Exchange : MetroWindow
     {
         private int selected = 0;
+        MYSql my = new MYSql();
         public Exchange()
         {
             InitializeComponent();
+            comboBox1.ItemsSource = my.ExecuteQuery("select distinct buildingnum from broom").DefaultView;
+            comboBox1.DisplayMemberPath = "buildingnum";
+            comboBox2.ItemsSource = my.ExecuteQuery("select distinct buildingnum from broom").DefaultView;
+            comboBox2.DisplayMemberPath = "buildingnum";
+
+
         }
 
         private void radioButton_Checked(object sender, RoutedEventArgs e)//修改个人住宿信息

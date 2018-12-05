@@ -17,7 +17,7 @@
             <RadioButton x:Name="radioButton1" Content="正在处理" Height="21.3333333333333" VerticalAlignment="Top" Checked="radioButton1_Checked"/>
             <RadioButton x:Name="radioButton2" Content="已完成" Height="21.3333333333333" VerticalAlignment="Top" Checked="radioButton2_Checked"/>
         </ToolBar>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="0,26,0,-0.333" VerticalAlignment="Top" Width="815" Height="395" Style="{StaticResource AzureDataGrid}" IsReadOnly="True">
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="0,26,0,-0.333" VerticalAlignment="Top" Width="815" Height="395" Style="{StaticResource AzureDataGrid}" IsReadOnly="True" ContextMenuOpening="dataGrid_ContextMenuOpening">
             <DataGrid.ContextMenu>
                 <ContextMenu Name="dgmenu1" StaysOpen="True" >
                     <MenuItem Header="评价" Click="MenuItem_Click"/>

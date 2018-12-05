@@ -70,12 +70,18 @@
     <Compile Include="addDor.xaml.cs">
       <DependentUpon>addDor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="addFix.xaml.cs">
+      <DependentUpon>addFix.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddMan.xaml.cs">
       <DependentUpon>AddMan.xaml</DependentUpon>
     </Compile>
     <Compile Include="AGSI.cs" />
     <Compile Include="ChangeMan.xaml.cs">
       <DependentUpon>ChangeMan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DorChange.xaml.cs">
+      <DependentUpon>DorChange.xaml</DependentUpon>
     </Compile>
     <Compile Include="fix.xaml.cs">
       <DependentUpon>fix.xaml</DependentUpon>
@@ -116,6 +122,9 @@
     <Compile Include="SdDetail.xaml.cs">
       <DependentUpon>SdDetail.xaml</DependentUpon>
     </Compile>
+    <Compile Include="setworker.xaml.cs">
+      <DependentUpon>setworker.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Source.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="StuMain.xaml.cs">
@@ -134,11 +143,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="addFix.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AddMan.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ChangeMan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DorChange.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -199,6 +216,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SdDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="setworker.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

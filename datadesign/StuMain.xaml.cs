@@ -29,29 +29,36 @@ namespace datadesign
 
         private void button_Click(object sender, RoutedEventArgs e)//添加报修
         {
-
+            addFix af = new addFix();
+            af.Show();
         }
 
         private void radioButton_Checked(object sender, RoutedEventArgs e)//未处理
         {
             selected = 1;
-            dgmenu1.IsEnabled = false;
         }
 
         private void radioButton1_Checked(object sender, RoutedEventArgs e)//正在处理
         {
             selected = 2;
-            dgmenu1.IsEnabled = false;
         }
 
         private void radioButton2_Checked(object sender, RoutedEventArgs e)//已完成
         {
             selected = 3;
-            dgmenu1.IsEnabled = true;
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void MenuItem_Click(object sender, RoutedEventArgs e)//评价
         {
+
+        }
+
+        private void dataGrid_ContextMenuOpening(object sender, ContextMenuEventArgs e)
+        {
+            if (selected == 1 || selected == 3)
+            {
+                e.Handled = true;
+            }
 
         }
     }

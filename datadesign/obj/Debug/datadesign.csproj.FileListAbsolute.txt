@@ -57,3 +57,9 @@ H:\课程相关\c＋＋\实验程序\datadesign\datadesign\obj\Debug\fix.g.cs
 H:\课程相关\c＋＋\实验程序\datadesign\datadesign\obj\Debug\StuMain.g.cs
 H:\课程相关\c＋＋\实验程序\datadesign\datadesign\obj\Debug\fix.baml
 H:\课程相关\c＋＋\实验程序\datadesign\datadesign\obj\Debug\StuMain.baml
+H:\课程相关\c＋＋\实验程序\datadesign\datadesign\obj\Debug\addFix.g.cs
+H:\课程相关\c＋＋\实验程序\datadesign\datadesign\obj\Debug\addFix.baml
+H:\课程相关\c＋＋\实验程序\datadesign\datadesign\obj\Debug\DorChange.g.cs
+H:\课程相关\c＋＋\实验程序\datadesign\datadesign\obj\Debug\DorChange.baml
+H:\课程相关\c＋＋\实验程序\datadesign\datadesign\obj\Debug\setworker.g.cs
+H:\课程相关\c＋＋\实验程序\datadesign\datadesign\obj\Debug\setworker.baml

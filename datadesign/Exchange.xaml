@@ -23,24 +23,8 @@
             <TextBox x:Name="yeartextbox" Height="23" Canvas.Left="112" TextWrapping="Wrap"  Canvas.Top="77" Width="120" Controls:TextBoxHelper.Watermark="学生入学年份"  Controls:TextBoxHelper.ClearTextButton="True" Visibility="Hidden" />
 
             <ComboBox x:Name="comboBox1" Canvas.Left="112" Canvas.Top="129" Width="120">
-                <ComboBoxItem>1</ComboBoxItem>
-                <ComboBoxItem>2</ComboBoxItem>
-                <ComboBoxItem>3</ComboBoxItem>
-                <ComboBoxItem>4</ComboBoxItem>
-                <ComboBoxItem>5</ComboBoxItem>
-                <ComboBoxItem>6</ComboBoxItem>
-                <ComboBoxItem>7</ComboBoxItem>
-                <ComboBoxItem>8</ComboBoxItem>
             </ComboBox>
             <ComboBox x:Name="comboBox2" Canvas.Left="112" Canvas.Top="33" Width="120" Visibility="Hidden">
-                <ComboBoxItem>1</ComboBoxItem>
-                <ComboBoxItem>2</ComboBoxItem>
-                <ComboBoxItem>3</ComboBoxItem>
-                <ComboBoxItem>4</ComboBoxItem>
-                <ComboBoxItem>5</ComboBoxItem>
-                <ComboBoxItem>6</ComboBoxItem>
-                <ComboBoxItem>7</ComboBoxItem>
-                <ComboBoxItem>8</ComboBoxItem>
             </ComboBox>
         </Canvas>
         <ToolBar x:Name="toolBar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="405">
