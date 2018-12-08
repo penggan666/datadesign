@@ -1,0 +1,29 @@
+﻿<Controls:MetroWindow  x:Class="datadesign.Assess"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:local="clr-namespace:datadesign"
+        mc:Ignorable="d"
+        Title="报修信息" Height="300" Width="300"
+        GlowBrush="{DynamicResource AccentColorBrush}"
+        BorderThickness="1"
+        WindowStartupLocation="CenterScreen"
+        ShowMaxRestoreButton="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="250*"/>
+            <RowDefinition Height="19*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="label" Content="评价" HorizontalAlignment="Left" Margin="20,101,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.535,0.102"/>
+        <TextBox x:Name="infoBox" HorizontalAlignment="Left" Height="88" Margin="94,101,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="179" Controls:TextBoxHelper.Watermark="请输入您的评价" Controls:TextBoxHelper.ClearTextButton="True"/>
+        <Button x:Name="button" Content="确定" HorizontalAlignment="Left" Margin="180,209,0,0" VerticalAlignment="Top" Width="93" Style="{StaticResource AccentedSquareButtonStyle}" Click="button_Click" />
+        <Label Content="修理是否有效" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.39,-1.141"/>
+        <ComboBox x:Name="choice"   HorizontalAlignment="Left" Margin="97,45,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem>是</ComboBoxItem>
+            <ComboBoxItem>否</ComboBoxItem>
+        </ComboBox>
+
+    </Grid>
+</Controls:MetroWindow>

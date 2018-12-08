@@ -11,22 +11,22 @@
         BorderThickness="1"
         WindowStartupLocation="CenterScreen"
         ShowMaxRestoreButton="False">
-    <Grid Margin="0,0,0.333,-1.333">
+    <Grid Margin="0,0,1.667,-1.667">
         <ToolBar x:Name="toolBar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="291">
             <RadioButton x:Name="radioButton" Content="删除寝室楼" Margin="0,0,0,0.333" Checked="radioButton_Checked"/>
             <RadioButton x:Name="radioButton1" Content="新建寝室楼" Height="21.3333333333333" VerticalAlignment="Top" Checked="radioButton1_Checked"/>
         </ToolBar>
-        <Label x:Name="label" Content="栋号" HorizontalAlignment="Left" Margin="8,63,0,0" VerticalAlignment="Top" />
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="93,62,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="label1" Content="寝室类别" HorizontalAlignment="Left" Margin="8,104,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
-        <Label x:Name="label2" Content="寝室大小" HorizontalAlignment="Left" Margin="8,143,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.178,0.555" Visibility="Hidden"/>
-        <Label x:Name="label2_Copy" Content="每层房间数" HorizontalAlignment="Left" Margin="8,229,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
-        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Margin="93,104,0,0" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
-        <ComboBox x:Name="comboBox2" HorizontalAlignment="Left" Margin="93,143,0,0" VerticalAlignment="Top" Width="120" Visibility="Hidden"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="93,228,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Controls:TextBoxHelper.ClearTextButton="True" Visibility="Hidden"/>
-        <Label x:Name="label3" Content="层数" HorizontalAlignment="Left" Margin="8,189,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="93,188,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Controls:TextBoxHelper.ClearTextButton="True" Visibility="Hidden"/>
-        <Button x:Name="button" Content="确定" HorizontalAlignment="Left" Margin="93,281,0,0" VerticalAlignment="Top" Width="120" Style="{StaticResource AccentedSquareButtonStyle}" Click="button_Click"/>
+        <Label x:Name="label" Content="栋号" HorizontalAlignment="Left" Margin="93,64,0,0" VerticalAlignment="Top" />
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="171,64,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label1" Content="寝室类别" HorizontalAlignment="Left" Margin="84,104,0,0" VerticalAlignment="Top" />
+        <Label x:Name="label2" Content="寝室大小" HorizontalAlignment="Left" Margin="84,143,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.178,0.555" />
+        <Label x:Name="label2_Copy" Content="每层房间数" HorizontalAlignment="Left" Margin="77,222,0,0" VerticalAlignment="Top" />
+        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Margin="171,104,0,0" VerticalAlignment="Top" Width="120" />
+        <ComboBox x:Name="comboBox2" HorizontalAlignment="Left" Margin="171,143,0,0" VerticalAlignment="Top" Width="120" />
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="171,222,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Controls:TextBoxHelper.ClearTextButton="True" />
+        <Label x:Name="label3" Content="层数" HorizontalAlignment="Left" Margin="93,185,0,0" VerticalAlignment="Top" />
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="171,182,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Controls:TextBoxHelper.ClearTextButton="True" />
+        <Button x:Name="button" Content="确定" HorizontalAlignment="Left" Margin="171,281,0,0" VerticalAlignment="Top" Width="120" Style="{StaticResource AccentedSquareButtonStyle}" Click="button_Click"/>
         <Controls:ProgressRing x:Name="Progress1"  Foreground="{DynamicResource AccentColorBrush}" IsActive="False"/>
     </Grid>
 </Controls:MetroWindow>

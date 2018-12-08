@@ -43,17 +43,37 @@ namespace datadesign
             {
                 string username = textBox.Text.Trim();
                 string s1 = "select wnum,pwd from worker where wnum='" + username + "' and pwd='" + password + "'";
+                string s3 = "select sid,password from student where sid='" + username + "'and password='" + password + "'";
                 DataTable dt = new DataTable();
+                DataTable dt1 = new DataTable();
                 dt=mysql.ExecuteQuery(s1);
+                dt1 = mysql.ExecuteQuery(s3);
                 if (dt != null && dt.Rows.Count > 0)
                 {
-                    string s2 = "update worker set pwd='" + password1 + "'where wnum='" + username + "'";
-                    int n = mysql.ExecuteUpdate(s2);
-                    if (n != 0)
-                    {
-                        await this.ShowMessageAsync("提示", "修改成功");
+                    try {
+                        string s2 = "update worker set pwd='" + password1 + "'where wnum='" + username + "'";
+                        mysql.ExecuteUpdate(s2);
+                        await this.ShowMessageAsync("提示", "宿管人员密码修改成功");
                         this.Close();
                     }
+                    catch(Exception ex)
+                    {
+                        await this.ShowMessageAsync("错误", ex.ToString());
+                    }
+                }
+                else if(dt1!=null&&dt1.Rows.Count>0)
+                {
+                    try {
+                        string s4 = "update student set password='" + password1 + "'where sid='" + username + "'";
+                        mysql.ExecuteUpdate(s4);
+                        await this.ShowMessageAsync("提示", "学生密码修改成功");
+                        this.Close();
+                    }
+                    catch(Exception ex)
+                    {
+                        await this.ShowMessageAsync("错误", ex.ToString());
+                    }
+                  
                 }
                 else
                 {

@@ -13,8 +13,8 @@
     <Grid>
         <Label x:Name="label" Content="工号" HorizontalAlignment="Left" Margin="74,41,0,0" VerticalAlignment="Top" Width="73"/>
         <Label x:Name="label1" Content="预计处理时间" HorizontalAlignment="Left" Margin="74,111,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="220,41,0,0" VerticalAlignment="Top" Width="120"/>
-        <DatePicker HorizontalAlignment="Left" Margin="220,111,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="recomboBox" HorizontalAlignment="Left" Margin="220,41,0,0" VerticalAlignment="Top" Width="120"/>
+        <DatePicker x:Name="datepicker"  HorizontalAlignment="Left" Margin="220,111,0,0" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="button" Content="确认" HorizontalAlignment="Left" Margin="220,205,0,0" VerticalAlignment="Top" Width="120" Style="{StaticResource AccentedSquareButtonStyle}" Click="button_Click" />
 
     </Grid>

@@ -26,6 +26,11 @@ namespace datadesign
         MYSql mysql = new MYSql();
         List<string> sex = new List<string>();
         List<string> size = new List<string>();
+        private DrMain dr;
+        public void setDr(DrMain dr)
+        {
+            this.dr = dr;
+        }
         public DorChange()
         {
             InitializeComponent();
@@ -83,10 +88,16 @@ namespace datadesign
                 else
                 {
                     string s = "select * from DS where buildingnum='" + comboBox.Text + "'";
+                    string s1 = "select * from worker where bnum='" + comboBox.Text + "'";
+                    DataTable d1 = mysql.ExecuteQuery(s1);
                     DataTable d = mysql.ExecuteQuery(s);
                     if (d.Rows.Count != 0)
                     {
                         await this.ShowMessageAsync("提示", "该寝室楼有人入住，不能删除");
+                    }
+                    else if(d1.Rows.Count!=0)
+                    {
+                        await this.ShowMessageAsync("提示", "该寝室尚有宿管信息，不能删除");
                     }
                     else
                     {
@@ -95,6 +106,8 @@ namespace datadesign
                         {
                             mysql.ExecuteUpdate("delete from broom where buildingnum='" + comboBox.Text + "'");
                             await this.ShowMessageAsync("提示", "删除成功");
+                            dr.first();
+                            
                             this.Close();
                         }
                     }
@@ -122,6 +135,7 @@ namespace datadesign
                 }
                 Progress1.IsActive = false;
                 await this.ShowMessageAsync("提示", "成功");
+                dr.first();
                 this.Close();
             }
 

@@ -63,3 +63,5 @@ H:\课程相关\c＋＋\实验程序\datadesign\datadesign\obj\Debug\DorChange.g
 H:\课程相关\c＋＋\实验程序\datadesign\datadesign\obj\Debug\DorChange.baml
 H:\课程相关\c＋＋\实验程序\datadesign\datadesign\obj\Debug\setworker.g.cs
 H:\课程相关\c＋＋\实验程序\datadesign\datadesign\obj\Debug\setworker.baml
+H:\课程相关\c＋＋\实验程序\datadesign\datadesign\obj\Debug\Assess.g.cs
+H:\课程相关\c＋＋\实验程序\datadesign\datadesign\obj\Debug\Assess.baml

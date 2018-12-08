@@ -30,10 +30,8 @@
         <ToolBar x:Name="toolBar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="405">
             <RadioButton x:Name="radioButton" Content="更改个人寝室信息" Height="21.3333333333333" VerticalAlignment="Top" Checked="radioButton_Checked"/>
             <RadioButton x:Name="radioButton1" Content="更改整个寝室信息" Height="21.3333333333333" VerticalAlignment="Top" Checked="radioButton1_Checked"/>
-            <RadioButton x:Name="radioButton2" Content="安排新生入住信息" Checked="radioButton2_Checked" Margin="0,0,0,1.4" Height="21" VerticalAlignment="Bottom"/>
         </ToolBar>
         <Button x:Name="button2" Content="确认修改" HorizontalAlignment="Left" Margin="158,283,0,0" VerticalAlignment="Top" Width="162" FontSize="13.333" Style="{StaticResource AccentedSquareButtonStyle}" Click="button2_Click"/>
-        <Controls:ProgressRing x:Name="Progress1"  Foreground="{DynamicResource AccentColorBrush}" IsActive="False"/>
 
     </Grid>
 </Controls:MetroWindow>

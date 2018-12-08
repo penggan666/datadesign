@@ -12,20 +12,20 @@
         WindowStartupLocation="CenterScreen"
         ShowMaxRestoreButton="False">
     <Grid>
-        <Controls:Tile Title="查看学生信息" TitleFontSize="16" TiltFactor="2" Grid.Column="0" Width="Auto" Height="Auto" Margin="97,33,539.333,247.667" Background="#CC119EDA" Click="Tile_Click" >
+        <Controls:Tile Title="学生信息" TitleFontSize="16" TiltFactor="2" Grid.Column="0" Width="Auto" Height="Auto" Margin="97,33,539.333,247.667" Background="#CC119EDA" Click="Tile_Click" >
             <Image x:Name="image" Height="93" Width="150" Source="bin/Debug/student.png"/>
         </Controls:Tile>
-        <Controls:Tile Title="查看寝室信息" TitleFontSize="16"  TiltFactor="2" Grid.Row="0" Width="Auto" Height="Auto" Margin="318,33,318.333,247.667" Click="Tile_Click_1" >
+        <Controls:Tile Title="寝室信息" TitleFontSize="16"  TiltFactor="2" Grid.Row="0" Width="Auto" Height="Auto" Margin="318,33,318.333,247.667" Click="Tile_Click_1" >
             <Image x:Name="image1" Height="93" Width="150" Source="bin/Debug/app store.png"/>
         </Controls:Tile>
-        <Controls:Tile Title="夜归信息" TitleFontSize="16" TiltFactor="2" Grid.Column="0" Width="179" Height="Auto" Margin="560,33,76.333,247.667" Background="#CC119EDA" Click="Tile_Click_2" >
+        <Controls:Tile Title="夜归信息" TitleFontSize="16" TiltFactor="2" Grid.Column="0" Width="179" Height="Auto" Margin="541,33,95.333,247.667" Background="#CC119EDA" Click="Tile_Click_2" >
             <Image x:Name="image2" Height="93" Width="150" Source="bin/Debug/11.png"/>
         </Controls:Tile>
-        <Controls:Tile Title="外来人员信息" TitleFontSize="16"  TiltFactor="2" Grid.Row="0" Width="179" Height="Auto" Margin="97,225,539.333,55.667" Click="Tile_Click_3" >
+        <Controls:Tile Title="外来人员信息" TitleFontSize="16"  TiltFactor="2" Grid.Row="0" Width="179" Height="Auto" Margin="202,225,434.333,55.667" Click="Tile_Click_3" >
             <Image x:Name="image3" Height="93" Width="150" Source="bin/Debug/22.png"/>
         </Controls:Tile>
-        <Controls:Tile Title="报修信息" TitleFontSize="16"  TiltFactor="2" Grid.Row="0" Width="179" Height="Auto" Margin="318,225,318.333,55.667" Click="Tile_Click_4" >
-            <Image x:Name="image4" Height="93" Width="150" Source="bin/Debug/22.png"/>
+        <Controls:Tile Title="报修信息" TitleFontSize="16"  TiltFactor="2" Grid.Row="0" Width="179" Height="Auto" Margin="442,225,194.333,55.667" Click="Tile_Click_4" >
+            <Image x:Name="image4" Height="93" Width="150" Source="bin/Debug/wrench.png"/>
         </Controls:Tile>
     </Grid>
 </Controls:MetroWindow>

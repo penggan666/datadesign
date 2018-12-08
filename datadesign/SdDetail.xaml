@@ -12,12 +12,14 @@
         WindowStartupLocation="CenterScreen"
         ShowMaxRestoreButton="False">
     <Grid>
-        <ToolBar x:Name="toolBar" HorizontalAlignment="Left" Margin="0,41,0,0" VerticalAlignment="Top" Width="486">
+        <ToolBar x:Name="toolBar" HorizontalAlignment="Left" Margin="0,41,0,0" VerticalAlignment="Top" Width="630">
             <Button x:Name="button" Content="学号查询" Height="23" Width="81" Margin="0,0,0,0.333" Click="button_Click" Style="{StaticResource AccentedSquareButtonStyle}"/>
             <Button x:Name="button1" Content="学院查询" Height="23" VerticalAlignment="Top" Width="81" Style="{StaticResource AccentedSquareButtonStyle}" Click="button1_Click"/>
             <Button x:Name="button2" Content="栋号查询" Height="23" VerticalAlignment="Bottom" Width="81" Style="{StaticResource AccentedSquareButtonStyle}" Click="button2_Click"/>
             <Button x:Name="button3" Content="寝室号查询" Height="23" VerticalAlignment="Top" Width="81" Style="{StaticResource AccentedSquareButtonStyle}" Click="button3_Click"/>
             <Button x:Name="button4" Content="入住时间查询" Height="23" VerticalAlignment="Top" Width="81" Style="{StaticResource AccentedSquareButtonStyle}" Click="button4_Click"/>
+            <Button x:Name="button5" Content="安排新生入住" Height="23" VerticalAlignment="Top" Width="81" Style="{StaticResource AccentedSquareButtonStyle}" Click="button5_Click"/>
+            <Button x:Name="button6" Content="毕业学生离校" Height="23" VerticalAlignment="Stretch" Width="81" Style="{StaticResource AccentedSquareButtonStyle}" Click="button6_Click" Margin="0,0,0,0.333"/>
 
         </ToolBar>
         <Label x:Name="label" Content="学号" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
@@ -30,7 +32,7 @@
                 <ContextMenu Name="dgmenu1" StaysOpen="true">
                     <MenuItem Header="删除" Click="MenuItem_Click"/>
                 </ContextMenu>
-        </DataGrid.ContextMenu>
+            </DataGrid.ContextMenu>
         </DataGrid>
         <Label x:Name="label4" Content="栋号" HorizontalAlignment="Left" Margin="350,11,0,0" VerticalAlignment="Top"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="0" Margin="558,26,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="8"/>

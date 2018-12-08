@@ -30,13 +30,15 @@ namespace datadesign
         public SdDetail()
         {
             InitializeComponent();
-            string s = "select student.sid as '学号',student.sname as '姓名',student.Ssex as '性别',student.scollege as '学院',DS.buildingnum as '栋号',DS.roomnum as '寝室号' from student,DS where student.sid=DS.sid";
+            string s = "select student.sid as '学号',student.sname as '姓名',student.Ssex as '性别',student.scollege as '学院',DS.buildingnum as '栋号',DS.roomnum as '寝室号',livetime as '入住时间' from student,DS where student.sid=DS.sid";
             dt = mysql.ExecuteQuery(s);
             dataGrid.ItemsSource = dt.DefaultView;
             string s1 = "select distinct scollege from student";
             DataTable d1 = mysql.ExecuteQuery(s1);
             comboBox1.ItemsSource = d1.DefaultView;
             comboBox1.DisplayMemberPath = "scollege";
+            comboBox2.ItemsSource = mysql.ExecuteQuery("select distinct livetime from DS").DefaultView;
+            comboBox2.DisplayMemberPath = "livetime";
             string s2 = "select distinct buildingnum from broom";
             DataTable d2 = mysql.ExecuteQuery(s2);
             for (int i = 0; i < d2.Rows.Count; i++)
@@ -62,7 +64,7 @@ namespace datadesign
             else
             {
                 string no = textBox.Text;
-                string s = "select student.sid as '学号',student.sname as '姓名',student.Ssex as '性别',student.scollege as '学院',DS.buildingnum as '栋号',DS.roomnum as '寝室号' from student,DS where student.sid=DS.sid and student.sid='" + no + "'";
+                string s = "select student.sid as '学号',student.sname as '姓名',student.Ssex as '性别',student.scollege as '学院',DS.buildingnum as '栋号',DS.roomnum as '寝室号',livetime as '入住时间' from student,DS where student.sid=DS.sid and student.sid='" + no + "'";
                 dt = mysql.ExecuteQuery(s);
                 dataGrid.ItemsSource = dt.DefaultView;
             }
@@ -75,7 +77,7 @@ namespace datadesign
                 await this.ShowMessageAsync("提示", "请选择学院");
             else
             {
-                string s = "select student.sid as '学号',student.sname as '姓名',student.Ssex as '性别',student.scollege as '学院',DS.buildingnum as '栋号',DS.roomnum as '寝室号' from student,DS where student.sid=DS.sid and student.scollege = '" + college + "'";
+                string s = "select student.sid as '学号',student.sname as '姓名',student.Ssex as '性别',student.scollege as '学院',DS.buildingnum as '栋号',DS.roomnum as '寝室号',livetime as '入住时间' from student,DS where student.sid=DS.sid and student.scollege = '" + college + "'";
                 dt = mysql.ExecuteQuery(s);
                 dataGrid.ItemsSource = dt.DefaultView;
             }
@@ -88,7 +90,7 @@ namespace datadesign
                 await this.ShowMessageAsync("提示", "请选择栋号");
             else
             {
-                string s = "select student.sid as '学号',student.sname as '姓名',student.Ssex as '性别',student.scollege as '学院',DS.buildingnum as '栋号',DS.roomnum as '寝室号' from student,DS where student.sid=DS.sid and buildingnum = '" + buildingnum + "'";
+                string s = "select student.sid as '学号',student.sname as '姓名',student.Ssex as '性别',student.scollege as '学院',DS.buildingnum as '栋号',DS.roomnum as '寝室号',livetime as '入住时间' from student,DS where student.sid=DS.sid and buildingnum = '" + buildingnum + "'";
                 dt = mysql.ExecuteQuery(s);
                 dataGrid.ItemsSource = dt.DefaultView;
             }
@@ -100,7 +102,7 @@ namespace datadesign
                 await this.ShowMessageAsync("提示", "检索信息不完整 请选择栋号和寝室号");
             else
             {
-                string s = "select student.sid as '学号',student.sname as '姓名',student.Ssex as '性别',student.scollege as '学院',DS.buildingnum as '栋号',DS.roomnum as '寝室号' from student,DS where student.sid=DS.sid and buildingnum = '" + comboBox.Text + "'and roomnum='"+comboBox3.Text+"'";
+                string s = "select student.sid as '学号',student.sname as '姓名',student.Ssex as '性别',student.scollege as '学院',DS.buildingnum as '栋号',DS.roomnum as '寝室号',livetime as '入住时间' from student,DS where student.sid=DS.sid and buildingnum = '" + comboBox.Text + "'and roomnum='"+comboBox3.Text+"'";
                 dt = mysql.ExecuteQuery(s);
                 dataGrid.ItemsSource = dt.DefaultView;
             }
@@ -114,7 +116,7 @@ namespace datadesign
             {
                 try
                 {
-                    string s = "select student.sid as '学号',student.sname as '姓名',student.Ssex as '性别',student.scollege as '学院',DS.buildingnum as '栋号',DS.roomnum as '寝室号' from student,DS where student.sid=DS.sid and livetime = '" + year + "'";
+                    string s = "select student.sid as '学号',student.sname as '姓名',student.Ssex as '性别',student.scollege as '学院',DS.buildingnum as '栋号',DS.roomnum as '寝室号',livetime as '入住时间' from student,DS where student.sid=DS.sid and livetime = '" + year + "'";
                     dt = mysql.ExecuteQuery(s);
                     dataGrid.ItemsSource = dt.DefaultView;
                 }
@@ -141,7 +143,56 @@ namespace datadesign
 
         }
 
+        private async void button5_Click(object sender, RoutedEventArgs e)//安排新生入住
+        {
+            GetInfo gf = new GetInfo();
+            int lastyear = gf.getYear();
+            string year=await this.ShowInputAsync("请输入入学年份", "年份");
+            if (year == "")
+                await this.ShowMessageAsync("提示", "请输入年份");
+            else if (Convert.ToInt32(year) !=lastyear+1)
+            {
+                await this.ShowMessageAsync("提示", "请输入正确的年份");
+            }
+            else
+            {
+                AGSI gs = new AGSI(year);
+                try
+                {
+                    gs.DAlloc();
+                    await this.ShowMessageAsync("提示", "完成");
+                }
+                catch (Exception ex)
+                {
+                    await this.ShowMessageAsync("Caution", ex.ToString());
+                }
+            }
+        }
 
+        private async void button6_Click(object sender, RoutedEventArgs e)//毕业学生离校
+        {
+            int maxyear;
+            int minyear;
+            DataTable dt = mysql.ExecuteQuery("select max(livetime) as maxyear, min(livetime) as minyear from DS");
+            try
+            {
+                maxyear = Convert.ToInt32(dt.Rows[0]["maxyear"]);
+                minyear = Convert.ToInt32(dt.Rows[0]["minyear"]);
+                if (maxyear - minyear == 3)
+                {
+                    mysql.ExecuteQuery("delete from DS where livetime = '" + minyear.ToString() + "'");
+                    await this.ShowMessageAsync("提示", "删除完成");
+                }
+                else
+                {
+                    await this.ShowMessageAsync("提示", "暂无毕业生信息");
+                }
+            }
+            catch
+            {
+                await this.ShowMessageAsync("提示", "暂无学生住宿信息");
+            }
 
+        }
     }
 }

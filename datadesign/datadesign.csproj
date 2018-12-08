@@ -77,6 +77,9 @@
       <DependentUpon>AddMan.xaml</DependentUpon>
     </Compile>
     <Compile Include="AGSI.cs" />
+    <Compile Include="Assess.xaml.cs">
+      <DependentUpon>Assess.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ChangeMan.xaml.cs">
       <DependentUpon>ChangeMan.xaml</DependentUpon>
     </Compile>
@@ -148,6 +151,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddMan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Assess.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -301,6 +308,9 @@
   <ItemGroup>
     <Resource Include="bin\Debug\11.png" />
     <Resource Include="bin\Debug\22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="bin\Debug\wrench.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

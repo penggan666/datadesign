@@ -91,7 +91,7 @@ namespace datadesign
 
         private async void button_Click2(object sender, RoutedEventArgs e)
         {
-            if (comboBox.Text == "")
+            if (comboBox1.Text == "")
                 await this.ShowMessageAsync("提示", "请选择栋号");
             else
             {

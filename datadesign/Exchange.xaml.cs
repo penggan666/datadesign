@@ -45,17 +45,17 @@ namespace datadesign
             num1.Content = "学号";
             selected = 1;
         }
-        public bool Getin(string buildingnum, string roomnum, int type) //type等于1 判断一个人入住，等于2 判断两个人入住情况
+        public bool Getin(string buildingnum, string roomnum, int type, string oldbuild = "", string oldroom="") //type等于1 判断一个人入住，等于2 判断两个人入住情况
         {
             int size;
             buildingnum = buildingnum.Replace("System.Windows.Controls.ComboBoxItem: ", "");
             MYSql mYSql = new MYSql();
             DataTable dt = mYSql.ExecuteQuery("select 'size'=count(*) from DS where buildingnum = '" + buildingnum + "' and roomnum = '" + roomnum + "'");
-            if (dt.Rows.Count == 0)
-            {
-                size = 0;
-                return true;
-            }
+            //if (dt.Rows.Count == 0)
+            //{
+            //    size = 0;
+            //    return true;
+            //}
             size = Convert.ToInt32(dt.Rows[0]["size"]);
             dt = mYSql.ExecuteQuery("select size from broom where buildingnum = '" + buildingnum + "' and roomnum = '" + roomnum + "'");
             if (dt.Rows.Count == 0)
@@ -63,6 +63,7 @@ namespace datadesign
                 return false;
             }
             int maxsize = Convert.ToInt32(dt.Rows[0]["size"]);
+
             switch (type)
             {
                 case 1:
@@ -73,7 +74,9 @@ namespace datadesign
                     else
                         return true;
                 case 2:
-                    if (size != 0)
+                    dt = mYSql.ExecuteQuery("select 'size'=count(*) from DS where buildingnum = '" + oldbuild + "' and roomnum = '" + oldroom + "'");
+                    int rsize= Convert.ToInt32(dt.Rows[0]["size"]);
+                    if (maxsize-size<rsize)
                         return false;
                     return true;
                 default:
@@ -107,39 +110,15 @@ namespace datadesign
             num1.Content = "旧寝室号";
             selected = 2;
         }
-        private void radioButton2_Checked(object sender, RoutedEventArgs e)
-        {
-            Label year = canvas.FindName("year") as Label;
-            Label label = canvas.FindName("label1") as Label;
-            Label num = canvas.FindName("label3") as Label;
-            Label num1 = canvas.FindName("label") as Label;
-            Label num2 = canvas.FindName("label2") as Label;
-            TextBox yearbox = canvas.FindName("yeartextbox") as TextBox;
-            TextBox textBox = canvas.FindName("textBox") as TextBox;
-            TextBox textBox1 = canvas.FindName("textBox1") as TextBox;
-            ComboBox tex1 = canvas.FindName("comboBox1") as ComboBox;
-            ComboBox tex = canvas.FindName("comboBox2") as ComboBox;
-
-            num2.Visibility = Visibility.Hidden;
-            num.Visibility = Visibility.Hidden;
-            label.Visibility = Visibility.Hidden;
-            num1.Visibility = Visibility.Hidden;
-            textBox.Visibility = Visibility.Hidden;
-            textBox1.Visibility = Visibility.Hidden;
-            tex1.Visibility = Visibility.Hidden;
-            tex.Visibility = Visibility.Hidden;
-
-            year.Visibility = Visibility.Visible;
-            yearbox.Visibility = Visibility.Visible;
-            selected = 3;
-        }
+      
 
         private async void button2_Click(object sender, RoutedEventArgs e)
         {
             GetInfo getInfo = new GetInfo();
-            string sid = textBox.Text.Trim();
-            string newroomnum = textBox1.Text.Trim();
-
+            string sid = textBox.Text.Trim();//selected=1是学号，selected=2是旧寝室号
+            string newroomnum = textBox1.Text.Trim();//新寝室号
+            string newbuildingnum = comboBox1.Text;//新栋号
+            string oldbuildingnum = comboBox2.Text;//旧栋号
 
             MYSql mysql = new MYSql();
             string s;
@@ -155,7 +134,7 @@ namespace datadesign
                     }
                     if (selected == 1)//修改个人
                     {
-                        string newbuildingnum = comboBox1.SelectedValue.ToString().Replace("System.Windows.Controls.ComboBoxItem: ", "");
+                        //string newbuildingnum = comboBox1.SelectedValue.ToString().Replace("System.Windows.Controls.ComboBoxItem: ", "");
                         if (Getin(newbuildingnum, newroomnum, 1))
                         {
                             s = "update DS set buildingnum = '" + newbuildingnum + "' ,roomnum = '" + newroomnum + "' where sid = '" + sid + "'";//sql语句
@@ -191,11 +170,11 @@ namespace datadesign
                     }
                     if (selected == 2)//修改整个寝室
                     {
-                        string newbuildingnum = comboBox1.SelectedValue.ToString().Replace("System.Windows.Controls.ComboBoxItem: ", "");
-                        string oldbuildingnum = comboBox2.SelectedValue.ToString().Replace("System.Windows.Controls.ComboBoxItem: ", "");
-                        if (Getin(newbuildingnum, newroomnum, 2))
+                        //string newbuildingnum = comboBox1.SelectedValue.ToString().Replace("System.Windows.Controls.ComboBoxItem: ", "");
+                        //string oldbuildingnum = comboBox2.SelectedValue.ToString().Replace("System.Windows.Controls.ComboBoxItem: ", "");
+                        if (Getin(newbuildingnum, newroomnum, 2, oldbuildingnum, sid))
                         {
-                            s = "update DS set buildingnum = '" + newbuildingnum + "',roomnum = '" + newroomnum + "'where buildingnum ='" + sid + "'and roomnum ='" + oldbuildingnum + "'";
+                            s = "update DS set buildingnum = '" + newbuildingnum + "',roomnum = '" + newroomnum + "'where buildingnum ='" + oldbuildingnum + "'and roomnum ='" + sid + "'";
                             MessageDialogResult result = await this.ShowMessageAsync("更改信息", "您真的要修改吗?", MessageDialogStyle.AffirmativeAndNegative);
                             if (result != MessageDialogResult.Negative)//取消
                             {
@@ -228,31 +207,7 @@ namespace datadesign
 
                 }
             }
-            else if (selected == 3)
-            {
-                string year = yeartextbox.Text;
-                if (year == "")
-                    await this.ShowMessageAsync("提示", "请输入年份");
-                else
-                {
-                    AGSI gs = new AGSI(year);
-
-                    try
-                    {
-                        Progress1.IsActive = true;
-                        gs.DAlloc();
-                        Progress1.IsActive = false;
-                        await this.ShowMessageAsync("提示", "完成");
-
-                    }
-                    catch (Exception ex)
-                    {
-                        await this.ShowMessageAsync("异常", ex.ToString());
-                    }
-
-                    this.Close();
-                }
-            }
+           
         }
     }
 }

@@ -23,11 +23,13 @@ namespace datadesign
     {
         DispatcherTimer timer = new DispatcherTimer();
         MYSql mysql = new MYSql();
-        public userMain()
+        string buildingnum;
+        public userMain(string buildingnum)
         {
             InitializeComponent();
             timer.Tick += new EventHandler(timer_Tick);
             timer.Start();
+            this.buildingnum = buildingnum;
         }
         void timer_Tick(object sender, EventArgs e)
         {
@@ -60,7 +62,7 @@ namespace datadesign
 
         private void Tile_Click_4(object sender, RoutedEventArgs e)//报修信息
         {
-            fix f = new fix();
+            fix f = new fix(buildingnum);
             f.Show();
         }
     }

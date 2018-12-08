@@ -52,7 +52,9 @@ namespace datadesign
                     dt = mysql.ExecuteQuery(s1);
                     if (dt != null && dt.Rows.Count > 0)
                     {
-                        userMain u = new userMain();
+                        GetInfo getInfo = new GetInfo();
+                        string buildingnum = getInfo.GetBuildingnum(username);
+                        userMain u = new userMain(buildingnum);
                         Source.build = dt.Rows[0][2].ToString();
                         this.Close();
                         u.Show();
@@ -73,9 +75,33 @@ namespace datadesign
                 }
                 if(selected==3)//学生界面
                 {
-                    StuMain stu = new StuMain();
-                    this.Close();
-                    stu.Show();
+                    string sid = userid.Text.Trim();
+                    string pw = password; ;//密码
+                    string s1 = "select sid,password from student where sid='" + sid + "' and password='" + pw + "'";
+                    DataTable dt = new DataTable();
+                    dt = mysql.ExecuteQuery(s1);
+                    if (dt != null && dt.Rows.Count > 0)
+                    {
+                        GetInfo gf = new GetInfo();
+                        string[] temp = gf.GetTable(sid);
+                        string buildingnum = temp[0];
+                        string roomnum = temp[1];
+                        if (buildingnum == "error")
+                        {
+                            await this.ShowMessageAsync("提示", "不存在您的住宿信息");
+                        }
+                        else
+                        {
+                            StuMain u = new StuMain(buildingnum, roomnum);
+                            this.Close();
+                            u.Show();
+                        }
+
+                    }
+                    else
+                    {
+                        await this.ShowMessageAsync("提示", "用户不存在或密码错误");
+                    }
                 }
             }
             //userMain u = new userMain();
